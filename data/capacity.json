@@ -1,0 +1,8 @@
+{
+  "page_width": 512,
+  "owned_pages": 20000,
+  "touched_pages_per_step": 65,
+  "open_forward_steps": 8,
+  "peak_scratch_bytes": 6291456,
+  "seed": 2891
+}

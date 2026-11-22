@@ -1,0 +1,231 @@
+{
+  "records": {
+    "page_width": 5,
+    "generation": 10,
+    "pages": {
+      "3": "p3",
+      "4": "p4",
+      "10": "p10"
+    },
+    "views": {
+      "a": {
+        "base": 16,
+        "shape": [
+          2,
+          3
+        ],
+        "strides": [
+          5,
+          1
+        ]
+      },
+      "twist": {
+        "base": 18,
+        "shape": [
+          3,
+          2
+        ],
+        "strides": [
+          -1,
+          5
+        ]
+      },
+      "bad": {
+        "base": 21,
+        "shape": [
+          4
+        ],
+        "strides": [
+          3
+        ]
+      }
+    },
+    "step": {
+      "id": "s11",
+      "base": 10,
+      "operations": [
+        [
+          "read-a",
+          1,
+          0,
+          "read",
+          "a",
+          [
+            0,
+            0
+          ],
+          null
+        ],
+        [
+          "read-b",
+          1,
+          1,
+          "read",
+          "twist",
+          [
+            2,
+            0
+          ],
+          null
+        ],
+        [
+          "add-a",
+          2,
+          0,
+          "add",
+          "a",
+          [
+            0,
+            0
+          ],
+          1.5
+        ],
+        [
+          "set-b",
+          3,
+          0,
+          "set",
+          "twist",
+          [
+            2,
+            0
+          ],
+          8
+        ],
+        [
+          "add-c",
+          4,
+          0,
+          "add",
+          "a",
+          [
+            0,
+            0
+          ],
+          -2
+        ],
+        [
+          "add-d",
+          4,
+          1,
+          "add",
+          "a",
+          [
+            1,
+            1
+          ],
+          2.25
+        ]
+      ]
+    },
+    "rejected_step": {
+      "id": "s12",
+      "base": 11,
+      "operations": [
+        [
+          "bad-add",
+          1,
+          0,
+          "add",
+          "bad",
+          [
+            3
+          ],
+          2
+        ]
+      ]
+    },
+    "upstream": [
+      {
+        "id": "rA",
+        "reads": [
+          [
+            "read-b",
+            3
+          ],
+          [
+            "read-a",
+            7
+          ]
+        ],
+        "new_value": [
+          [
+            16,
+            5
+          ]
+        ]
+      },
+      {
+        "id": "rB",
+        "reads": [],
+        "new_value": [
+          [
+            22,
+            -4
+          ]
+        ]
+      },
+      {
+        "id": "rA",
+        "reads": [
+          [
+            "read-b",
+            3
+          ],
+          [
+            "read-a",
+            7
+          ]
+        ],
+        "new_value": [
+          [
+            16,
+            5
+          ]
+        ]
+      }
+    ],
+    "unlisted_upstream": "zero"
+  },
+  "tensors": {
+    "p3": {
+      "dtype": "float64",
+      "shape": [
+        5
+      ],
+      "values": [
+        4,
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    "p4": {
+      "dtype": "float64",
+      "shape": [
+        5
+      ],
+      "values": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    "p10": {
+      "dtype": "float64",
+      "shape": [
+        5
+      ],
+      "values": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    }
+  }
+}
